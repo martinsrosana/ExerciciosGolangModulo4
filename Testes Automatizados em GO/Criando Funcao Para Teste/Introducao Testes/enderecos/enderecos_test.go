@@ -1,6 +1,9 @@
 package enderecos
 
+// poderia ser assim também package enderecos_test
 import "testing"
+
+// poderia ser assim também import "introducao-testes/enderecos" ou importar com alias ."introducao-testes/enderecos" que ai não precisa usar o pacote antes da funcao
 
 type cenarioDeTeste struct {
 	enderecoInserido string
@@ -22,7 +25,7 @@ func TestTipoDeEndereco(t *testing.T) {
 	}
 
 	for _, cenario := range cenarioDeTeste {
-		retornoRecebido := TipoDeEndereco(cenario.enderecoInserido)
+		retornoRecebido := TipoDeEndereco(cenario.enderecoInserido) //aqui se tivesse usando o pacote enderecos poderia ser enderecos.TipoDeEndereco(cenario.enderecoInserido)
 		if retornoRecebido != cenario.retornoEsperado {
 			t.Errorf("O tipo recebido é diferente do esperado! Esperava %s e recebeu %s", cenario.retornoEsperado, retornoRecebido)
 		}
